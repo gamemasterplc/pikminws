@@ -815,12 +815,18 @@ void DGXGraphics::setPerspective(Mtx mtx, f32 a1, f32 a2, f32 a3, f32 a4, f32 a5
  * Address:	80048A30
  * Size:	00019C
  */
-void DGXGraphics::setOrthogonal(Mtx mtx, RectArea& bounds)
+void DGXGraphics::setOrthogonal(Mtx mtx, RectArea& bounds, bool extBounds)
 {
+	float minX = bounds.mMinX;
+	float maxX = bounds.mMaxX;
+	if(extBounds) {
+		minX = ((minX-320)*(848.0f/640.0f))+320;
+		maxX = ((maxX-320)*(848.0f/640.0f))+320;
+	}
 #if defined(VERSION_PIKIDEMO) || defined(VERSION_GPIP01_00)
-	C_MTXOrtho(mtx, bounds.mMinY, bounds.mMaxY, bounds.mMinX, bounds.mMaxX, 0.0f, -1.0f);
+	C_MTXOrtho(mtx, bounds.mMinY, bounds.mMaxY, minX, maxX, 0.0f, -1.0f);
 #else
-	MTXOrtho(mtx, bounds.mMinY, bounds.mMaxY, bounds.mMinX, bounds.mMaxX, 0.0f, -1.0f);
+	MTXOrtho(mtx, bounds.mMinY, bounds.mMaxY, minX, maxX, 0.0f, -1.0f);
 #endif
 	GXSetProjection(mtx, GX_ORTHOGRAPHIC);
 	GXLoadPosMtxImm(Matrix4f::ident.mMtx, 0);

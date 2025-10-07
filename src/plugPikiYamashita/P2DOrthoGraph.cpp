@@ -46,13 +46,15 @@ P2DOrthoGraph::P2DOrthoGraph(int x0, int y0, int width, int height)
  */
 void P2DOrthoGraph::setPort()
 {
+	float minX = ((mLogicalViewBounds.mMinX-320)*(848.0f/640.0f))+320;
+	float maxX = ((mLogicalViewBounds.mMaxX-320)*(848.0f/640.0f))+320;
 	P2DGrafContext::setPort();
-
+	
 #if defined(VERSION_PIKIDEMO) || defined(VERSION_GPIP01_00)
-	C_MTXOrtho(mProjectionMtx.mMtx, mLogicalViewBounds.mMinY, mLogicalViewBounds.mMaxY, mLogicalViewBounds.mMinX, mLogicalViewBounds.mMaxX,
+	C_MTXOrtho(mProjectionMtx.mMtx, mLogicalViewBounds.mMinY, mLogicalViewBounds.mMaxY, minX, maxX,
 	           mLogicalNearZ, mLogicalFarZ);
 #else
-	MTXOrtho(mProjectionMtx.mMtx, mLogicalViewBounds.mMinY, mLogicalViewBounds.mMaxY, mLogicalViewBounds.mMinX, mLogicalViewBounds.mMaxX,
+	MTXOrtho(mProjectionMtx.mMtx, mLogicalViewBounds.mMinY, mLogicalViewBounds.mMaxY, minX, maxX,
 	         mLogicalNearZ, mLogicalFarZ);
 #endif
 	GXSetProjection(mProjectionMtx.mMtx, GX_ORTHOGRAPHIC);

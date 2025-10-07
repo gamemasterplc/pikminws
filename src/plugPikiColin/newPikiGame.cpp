@@ -1300,7 +1300,8 @@ struct NewPikiGameSetupSection : public BaseGameSection {
 			}
 
 			gfx.setCamera(&mGameCamera);
-			mGameCamera.update(f32(gfx.mScreenWidth) / f32(gfx.mScreenHeight), mGameCamera.mFov, 100.0f, mCameraFarClip);
+			float aspect = f32(gfx.mScreenWidth) / f32(gfx.mScreenHeight);
+			mGameCamera.update(aspect*(848.0f/640.0f), mGameCamera.mFov, 100.0f, mCameraFarClip);
 		}
 
 		if (!(gameflow.mDemoFlags & 0x80)) {

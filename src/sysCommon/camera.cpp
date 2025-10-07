@@ -418,8 +418,8 @@ f32 Camera::projectWorldPoint(Graphics& gfx, Vector3f& point)
 	point.x *= norm;
 	point.y *= norm;
 	point.z *= norm;
-
-	point.x *= gfx.mScreenWidth / 2.0f;
+		
+	point.x *= (gfx.mScreenWidth*(848.0f/640.0f)) / 2.0f;
 	point.y *= -(gfx.mScreenHeight / 2.0f);
 
 	point.x += gfx.mScreenWidth / 2.0f;

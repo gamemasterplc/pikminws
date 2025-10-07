@@ -146,7 +146,7 @@ struct Graphics {
 	virtual void setLight(Light*, int)                        = 0;                         // _34
 	virtual void clearBuffer(int, bool)                       = 0;                         // _38
 	virtual void setPerspective(Mtx, f32, f32, f32, f32, f32) = 0;                         // _3C
-	virtual void setOrthogonal(Mtx, RectArea&)                = 0;                         // _40
+	virtual void setOrthogonal(Mtx, RectArea&, bool extBounds = false) = 0;					// _40
 	virtual void setLightcam(LightCamera* cam) { mLightCam = cam; }                        // _44
 	virtual void setViewport(RectArea&)       = 0;                                         // _48
 	virtual void setViewportOffset(RectArea&) = 0;                                         // _4C
@@ -221,7 +221,7 @@ struct DGXGraphics : public Graphics {
 	virtual void setLight(Light*, int);                                                // _34
 	virtual void clearBuffer(int, bool);                                               // _38
 	virtual void setPerspective(Mtx, f32, f32, f32, f32, f32);                         // _3C
-	virtual void setOrthogonal(Mtx, RectArea&);                                        // _40
+	virtual void setOrthogonal(Mtx, RectArea&, bool extBounds = false);					// _40
 	virtual void setViewport(RectArea&);                                               // _48
 	virtual void setViewportOffset(RectArea&);                                         // _4C
 	virtual void setScissor(RectArea&);                                                // _50

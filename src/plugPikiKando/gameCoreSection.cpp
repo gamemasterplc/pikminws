@@ -1808,7 +1808,7 @@ void GameCoreSection::draw1D(Graphics& gfx)
 	}
 
 	Matrix4f mtx;
-	gfx.setOrthogonal(mtx.mMtx, RectArea(0, 0, gfx.mScreenWidth, gfx.mScreenHeight));
+	gfx.setOrthogonal(mtx.mMtx, RectArea(0, 0, gfx.mScreenWidth, gfx.mScreenHeight), true);
 
 	if (!AIPerf::generatorMode) {
 		if (bossMgr && !hideTeki()) {

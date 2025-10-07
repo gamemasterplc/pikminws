@@ -81,7 +81,7 @@ void GameFlow::drawLoadLogo(Graphics& gfx, bool p2, Texture* p3, f32 p4)
 
 	Matrix4f mtx;
 	llspin += (p2) ? 1.0f / 60.0f : gsys->getFrameTime();
-	gfx.setOrthogonal(mtx.mMtx, RectArea(0, 0, gfx.mScreenWidth, gfx.mScreenHeight));
+	gfx.setOrthogonal(mtx.mMtx, RectArea(0, 0, gfx.mScreenWidth, gfx.mScreenHeight), true);
 	if (mRedLoadLogo) {
 		gfx.setColour(Colour(220, 0, 0, p4 * 255.0f), true);
 		gfx.setAuxColour(Colour(220, 0, 0, p4 * 255.0f));

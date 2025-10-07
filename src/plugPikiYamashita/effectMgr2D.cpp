@@ -132,7 +132,8 @@ void zen::EffectMgr2D::update()
  */
 void zen::EffectMgr2D::draw(Graphics& gfx)
 {
-	mCamera.update(f32(gfx.mScreenWidth) / f32(gfx.mScreenHeight), 30.0f, 1.0f, 5000.0f);
+    float aspect = f32(gfx.mScreenWidth) / f32(gfx.mScreenHeight);
+	mCamera.update(aspect*(848.0f/640.0f), 30.0f, 1.0f, 5000.0f);
 	gfx.setCamera(&mCamera);
 	gfx.setPerspective(mCamera.mPerspectiveMatrix.mMtx, mCamera.mFov, mCamera.mAspectRatio, mCamera.mNear, mCamera.mFar, 1.0f);
 	gfx.setScissor(RectArea(0, 0, gfx.mScreenWidth, gfx.mScreenHeight));

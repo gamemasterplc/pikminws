@@ -374,7 +374,7 @@ CamDataInfo::CamDataInfo()
 {
 	mCamera.mNear        = 1.0f;
 	mCamera.mFar         = 15000.0f;
-	mCamera.mAspectRatio = 640.0f / 480.0f;
+	mCamera.mAspectRatio = 848.0f / 480.0f;
 	mUseStaticCamera     = 0;
 };
 

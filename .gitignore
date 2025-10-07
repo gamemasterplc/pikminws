@@ -46,3 +46,6 @@ tools/powerpc
 *.idb
 *.til
 mwcc_debugger.py
+
+# Mod filesystem
+mod/out

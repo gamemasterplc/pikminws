@@ -782,7 +782,7 @@ void System::showDvdError(Graphics& gfx)
 	}
 
 	gfx.setColour(Colour(0, 0, 0, 255), true);
-	gfx.fillRectangle(RectArea(0, 0, gfx.mScreenWidth, gfx.mScreenHeight));
+	gfx.fillRectangle(RectArea((gfx.mScreenWidth*-104)/640, 0, (gfx.mScreenWidth*744)/640, gfx.mScreenHeight));
 	gfx.setColour(Colour(255, 255, 255, 255), true);
 	gfx.setAuxColour(Colour(255, 255, 255, 255));
 
@@ -970,12 +970,12 @@ void* loadFunc(void* idler)
 		STACK_PAD_VAR(1);
 		Matrix4f mtx;
 		DGXGraphics* gfx = static_cast<DGXGraphics*>(gsys->mDGXGfx);
-		gfx->setOrthogonal(mtx.mMtx, RectArea(0, 0, gfx->mScreenWidth, gfx->mScreenHeight));
+		gfx->setOrthogonal(mtx.mMtx, RectArea(0, 0, gfx->mScreenWidth, gfx->mScreenHeight), true);
 
 		if (gsys->mIsLoadScreenActive) {
 			gfx->setColour(Colour(0, 0, 0, 32), true);
 			gfx->setAuxColour(Colour(0, 0, 0, 32));
-			gfx->fillRectangle(RectArea(0, 0, gfx->mScreenWidth, gfx->mScreenHeight));
+			gfx->fillRectangle(RectArea((gfx->mScreenWidth*-104)/640, 0, (gfx->mScreenWidth*744)/640, gfx->mScreenHeight));
 		}
 
 		if (loadIdler && frameCount >= gsys->mLoadTimeBeforeIdling) {
