@@ -895,7 +895,11 @@ void zen::ogRaderMgr::draw(Graphics& gfx)
 			P2DPerspGraph graf(0, 0, 640, 480, 30.0f, 1.0f, 5000.0f);
 			graf.setPort();
 			if (_04 == 1) {
-				GXSetScissor(_14, _18, _1C, _20);
+				int minX = _14;
+				int maxX = _14+_1C;
+				minX = (((minX-320)*640)/848)+320;
+				maxX = (((maxX-320)*640)/848)+320;
+				GXSetScissor(minX, _18, maxX-minX, _20);
 			}
 			mMainScreen->draw(0, 0, &graf);
 			if (_04 == 1) {
