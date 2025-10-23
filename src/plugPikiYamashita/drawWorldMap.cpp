@@ -1695,7 +1695,11 @@ zen::DrawWorldMap::DrawWorldMap()
 	mPointScreen = new DrawScreen("screen/blo/w_point.blo", nullptr, true, true);
 	mLineScreen  = new DrawScreen("screen/blo/w_line.blo", nullptr, true, true);
 	mBackScreen  = new DrawScreen("screen/blo/w_back.blo", nullptr, true, true);
-
+	
+	P2DScreen* screen = mBackScreen->getScreenPtr();
+	screen->setScale(1.325f, 1.0f, 1.0f);
+	screen->setOffset(320, 240);
+	
 	mModeTimer            = 0.0f;
 	mCurrentMode          = DrawWorldMapMode::Null;
 	mReturnStatus         = RETURNSTATUS_Null;

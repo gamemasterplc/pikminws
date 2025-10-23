@@ -63,7 +63,7 @@ zen::ogDrawScrMenu::ogDrawScrMenu()
 	mCurrentAngle    = 0.0f;
 	mTargetAngle     = 0.0f;
 	mAngularVelocity = 0.0f;
-	mOrbitRadius     = 600.0f;
+	mOrbitRadius     = 808.0f;
 	mMenuDisplayMode = 0;
 }
 

@@ -58,7 +58,7 @@ public:
 	{
 		mInitialState = state;
 		setAngle((f32)(state - 1) * TAU / 6.0f);
-		setMaxR(600.0f);
+		setMaxR(808.0f);
 		mAngularVelocity = 0.0f;
 
 		mRootPane->move((mOrbitRadius * NMathF::sin(mCurrentAngle)), 0, (-mOrbitRadius * NMathF::cos(mCurrentAngle)) + mOrbitRadius);

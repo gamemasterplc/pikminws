@@ -127,8 +127,8 @@ public:
 	// might be wait
 	void appear()
 	{
-		mStartPos.set(640.0f, 30.0f, 0.0f);
-		mTargetPos.set(40.0f, 30.0f, 0.0f);
+		mStartPos.set(744.0f, 30.0f, 0.0f);
+		mTargetPos.set(-64.0f, 30.0f, 0.0f);
 		mAnimTimer = 0.0f;
 		mAnimState = TitleAnimState::Appearing;
 		show();
@@ -271,7 +271,8 @@ public:
 		if (mIsVisible) {
 			mUnselectedPic->hide();
 			mSelectedPic->show();
-			mSelectionLine->show();
+			//TODO: Line hidden because editing layouts with a hex editor is hard
+			//mSelectionLine->show();
 		}
 	}
 	void setPane(P2DScreen* pointScreen, u32 tag1, u32 tag2, u32 tag3, P2DScreen* lineScreen, u32 tag4)
@@ -579,7 +580,7 @@ public:
 	void update()
 	{
 		if (zen::Rand(100.0f) < mStarFallChance) {
-			WMeffMgr->create(EFF2D_MapShootingStar, Vector3f(zen::Rand(640.0f), 500.0f - zen::Rand(50.0f), -zen::Rand(150.0f)), nullptr,
+			WMeffMgr->create(EFF2D_MapShootingStar, Vector3f(zen::Rand(848.0f)-104, 500.0f - zen::Rand(50.0f), -zen::Rand(150.0f)), nullptr,
 			                 nullptr);
 		}
 		if (mIsRapidFireMode) {
