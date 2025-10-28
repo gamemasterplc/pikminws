@@ -117,10 +117,10 @@ void zen::ogScrFileSelectMgr::MovePaneXY()
 			}
 		}
 	} else {
-		if (x0 < 650) {
+		if (x0 < 754) {
 			x0 += 40;
 		}
-		if (x1 < 650) {
+		if (x1 < 754) {
 			x1 += 20;
 		}
 	}

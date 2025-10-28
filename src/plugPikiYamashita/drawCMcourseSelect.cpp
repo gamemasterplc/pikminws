@@ -213,9 +213,9 @@ zen::DrawCMcourseSelect::DrawCMcourseSelect()
 	P2DScreen* bestScreen  = mBestScreen->getScreenPtr();
 
 	P2DPane* pane = scoreScreen->search('rank', true);
-	pane->move(355, 234);
+	pane->move(459, 234);
 	pane = bestScreen->search('best', true);
-	pane->move(405, 164);
+	pane->move(509, 164);
 
 	_8C = selScreen->search('abtn', true);
 	_90 = 0;

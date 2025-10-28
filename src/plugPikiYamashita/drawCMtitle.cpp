@@ -104,7 +104,7 @@ bool zen::DrawCMtitleObj::modeAppear()
 		tComp = 1.0f - t;
 	}
 
-	mTitlePane->move(RoundOff(-1920.0f * t + 2560.0f * tComp), 240);
+	mTitlePane->move(RoundOff(-2648.0f * t + 3392.0f * tComp), 240);
 	return res;
 }
 

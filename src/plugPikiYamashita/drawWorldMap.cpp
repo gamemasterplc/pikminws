@@ -123,6 +123,8 @@ public:
 
 	void init(P2DScreen* wipeScreen)
 	{
+		wipeScreen->setScale(1.325f, 1.325f, 1.0f);
+		wipeScreen->setOffset(320, 240);
 		mWipes[0].init(wipeScreen, 'wp00');
 		mWipes[1].init(wipeScreen, 'wp01');
 		mWipes[2].init(wipeScreen, 'wp02');
