@@ -36,6 +36,7 @@ Index
   - [Linux](#linux)
 - [Building](#building)
 - [Diffing](#diffing)
+- [Widescreen](#widescreen)
 
 Dependencies
 ------------
@@ -85,8 +86,9 @@ Building
   git clone https://github.com/projectPiki/pikmin.git
   ```
 
-- Copy your game's disc image to `orig/GPIE01_01`. (Or the appropriate version folder.)
+- Copy your game's disc image or an extracted version of the game's disk image to `orig/GPIE01_01`. (Or the appropriate version folder.)
   - Supported formats: ISO (GCM), RVZ, WIA, WBFS, CISO, NFS, GCZ, TGC
+  - The disk image can be extracted with the extract functionality in [pyisotools](https://github.com/JoshuaMKW/pyisotools).
   - After the initial build, the disc image can be deleted to save space.
 
 - Configure:
@@ -111,3 +113,13 @@ Download the latest release from [encounter/objdiff](https://github.com/encounte
 
 Select an object from the left sidebar to begin diffing. Changes to the project will rebuild automatically: changes to source files, headers, `configure.py`, `splits.txt` or `symbols.txt`.
 
+
+Widescreen
+---------- 
+
+- Building:
+  - Requires `GPIE01_01` version fully extracted (with sys and large files folder) to `orig/GPIE01_01` and Microsoft Windows.
+  - Run `build.bat` to build.
+  - The modified version of the game will be output to `mod/out` as extracted files.
+  - The output can be rebuilt into a full disk image with [pyisotools](https://github.com/JoshuaMKW/pyisotools).
+  - Alternatively, the output can be run in Dolphin directly by loading `mod/out/sys/main.dol` in Dolphin.
