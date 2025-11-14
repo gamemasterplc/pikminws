@@ -75,7 +75,7 @@ zen::DrawHiScore::DrawHiScore()
 
 	// if we haven't unlocked any challenge modes, hide the challenge mode records?
 	if (stageCount == 0) {
-		mTotalsPane->move(27, 130);
+		mTotalsPane->move(-77, 130);
 		mCMRecordsPane->hide();
 	}
 }
